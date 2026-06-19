@@ -1,0 +1,201 @@
+:root {
+    --primary-color: #1a202c;
+    --secondary-color: #4a5568;
+    --accent-bg: #f7fafc;
+    --accent-border: #e2e8f0;
+    --header-text: #000000;
+    --font-main: 'Outfit', sans-serif;
+    --a4-width: 210mm;
+    --a4-height: 297mm;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    line-height: 1.6; /* Maximized to fill space */
+    background-color: #f0f2f5;
+    padding: 0;
+}
+
+.resume-wrapper {
+    background-color: #fff;
+    width: var(--a4-width);
+    height: var(--a4-height); /* Forced height */
+    margin: 0 auto;
+    padding: 8mm 6mm; /* Broader: reduced side padding, adjusted top padding */
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden; /* Prevent spillover */
+}
+
+/* Header Styles */
+.main-header {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.main-header h1 {
+    font-size: 1.5rem; /* Smaller */
+    font-weight: 700;
+    color: var(--header-text);
+    letter-spacing: -0.5px;
+    margin-bottom: 2px;
+}
+
+.summary-line {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-top: 4px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-combined {
+    font-size: 0.78rem;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.contact-combined span, .contact-combined a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.contact-combined i { color: #2d3748; }
+.contact-combined .separator { color: #a0aec0; }
+
+/* Section Styles */
+.resume-section {
+    margin-bottom: 25px; /* Reduced to save space */
+}
+
+.section-title {
+    border-bottom: 1.5px solid #000;
+    padding: 0;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-content {
+    padding: 0 4px;
+}
+
+/* Item Headers */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+}
+
+.item-header h3, .degree, .job-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.date-range {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.institution, .company {
+    font-style: italic;
+    color: #4a5568;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 20px;
+}
+
+.skill-cat {
+    font-size: 0.82rem;
+    color: #4a5568;
+}
+
+.skill-cat strong { color: #2d3748; }
+
+/* Lists */
+.bullet-list {
+    list-style-type: none;
+    margin-bottom: 2px;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 0.82rem;
+    margin-bottom: 1px;
+    color: #4a5568;
+}
+
+.bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2d3748;
+}
+
+/* Projects */
+.competence-group {
+    margin-bottom: 4px;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 1px;
+}
+
+.project-links a {
+    font-size: 0.75rem;
+    color: #2d3748;
+    text-decoration: underline;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* Print Optimization */
+@media print {
+    body { background-color: #fff; padding: 0; }
+    .resume-wrapper {
+        box-shadow: none;
+        border: none;
+        padding: 4mm 10mm;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .section-title {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
